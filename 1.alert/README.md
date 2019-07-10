@@ -1,8 +1,4 @@
-## 要求 
-    
-- 补充以下HTML，实现点击某一个数字可以alert出该数字。
 
-```html
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -23,8 +19,17 @@
   
   <script>
      // write your code here 
-     // ......
+     ocument.addEventListener('DOMContentLoaded', function() {
+             let app = document.getElementById('no');
+             // 事件侦听器绑定到整个容器上
+             app.addEventListener('click', function(e) {
+                 if(e.target && e.target.nodeName === 'LI') {
+                     let item = e.target;
+                     alert( item.innerHTML);
+                 }
+             });
+         });
   </script>
   </body>
   </html>
-```
+
